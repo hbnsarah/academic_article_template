@@ -1,0 +1,106 @@
+---
+format:
+  pdf:
+    documentclass: article
+    classoption: twocolumn
+    geometry: margin=1in
+  html:
+    theme: flatly
+bibliography: references.bib
+csl: elsevier-harvard.csl
+---
+
+```{r}
+#| echo: false
+#| message: false
+
+setwd("~/R/Quarto/Article_publication")
+```
+
+```{=latex}
+\twocolumn[
+  \begin{@twocolumnfalse}
+    \begin{center}
+      \textbf{\LARGE Quarto and R for Academic Writing} \\
+      \vspace{0.25cm}
+      \textbf{Houben S.\textsuperscript{1}}
+    \end{center}
+    \vspace{1cm}
+    \text{Affiliation:} \\
+    \text{\textsuperscript{1} : No affiliation} \\
+    \section*{Abstract}
+    {{< lipsum 1 >}}
+    \vspace{1cm}
+  \end{@twocolumnfalse}
+]
+
+``` 
+
+
+# Introduction
+
+{{< lipsum 2 >}} 
+[@Wickham_2016; @R_Core_Team_2024; @Wickham_2019]
+
+# Materials & Methods
+
+{{< lipsum 2 >}}
+
+# Results
+
+{{< lipsum 1 >}}
+
+\onecolumn
+```{r}
+#| echo: false
+#| message: false
+#| comment: NA
+#| fig.align: "center"
+
+library(gt)
+library(dplyr)
+
+# Prepare the mtcars dataset
+data_mtcars <- mtcars        
+
+# Create the gt table
+data_mtcars %>%
+  gt() %>%
+  tab_header(title = "", subtitle = "Table 1: Summary of the mtcars dataset with various attributes.") %>%
+  tab_style(
+    style = list(
+      cell_fill(color = "#E3E3E3"),
+      cell_text(size = 12, weight = "bold")
+    ),
+    locations = cells_body(columns = "mpg") 
+  )
+```
+
+\twocolumn
+
+
+{{< lipsum 2 >}}
+
+```{r}
+#| echo: false
+#| message: false
+
+
+library(ggplot2)
+ggplot(mtcars, aes(x = wt, y = mpg)) +
+  geom_point() +
+  labs(title = "Scatter plot of MPG vs Weight",
+       x = "Weight (1000 lbs)",
+       y = "Miles per Gallon")
+```
+
+# Discussion
+
+{{< lipsum 3 >}}
+[@Xie_2018]
+
+# Conclusion
+
+{{< lipsum 1 >}}
+
+# Bibliography
