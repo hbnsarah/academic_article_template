@@ -26,7 +26,7 @@ setwd("~/R/Quarto/Article_publication")
       \textbf{Houben S.\textsuperscript{1}}
     \end{center}
     \vspace{1cm}
-    \text{Affiliation:} \\
+    \text{Affiliations:} \\
     \text{\textsuperscript{1} : No affiliation} \\
     \section*{Abstract}
     {{< lipsum 1 >}}
@@ -42,7 +42,7 @@ setwd("~/R/Quarto/Article_publication")
 {{< lipsum 2 >}} 
 [@Wickham_2016; @R_Core_Team_2024; @Wickham_2019]
 
-# Materials & Methods
+# Materials and Methods
 
 {{< lipsum 2 >}}
 
