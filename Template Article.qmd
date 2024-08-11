@@ -4,8 +4,6 @@ format:
     documentclass: article
     classoption: twocolumn
     geometry: margin=1in
-  html:
-    theme: flatly
 bibliography: references.bib
 csl: elsevier-harvard.csl
 ---
